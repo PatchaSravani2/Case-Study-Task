@@ -51,6 +51,8 @@ module.exports = {
                 return h.response({ message: 'Missing required fields: title, description, due_date, status' }).code(400);
             }
 
+            console.log('hello');
+
             const [updated] = await TaskManagement.update(
                 { title, description, due_date, status },
                 { where: { id: req.params.id } }
